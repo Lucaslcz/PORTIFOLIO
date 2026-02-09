@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Cruz | Desenvolvedor Web</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #0f0f0f;
+            --primary: #00ff88;
+            --text: #e0e0e0;
+            --text-dim: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 { font-size: 4rem; letter-spacing: -2px; }
+        .accent { color: var(--primary); }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: var(--bg);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        section { padding: 80px 0; }
+        
+        h2 { 
+            font-size: 2rem; 
+            margin-bottom: 30px; 
+            border-left: 4px solid var(--primary); 
+            padding-left: 15px; 
+        }
+
+        #sobre p {
+            text-align: justify;
+            margin-bottom: 50px;
+        }
+
+        section p {
+            margin-bottom: 40px;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+        }
+        
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #1a1a1a;
+            transition: 0.3s ease;
+        }
+
+        .card:hover { 
+            border-color: var(--primary); 
+            transform: translateY(-5px); 
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #0f0f0f, #050505);
+            border: 1px solid #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .card p, .project-card p {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 50px 0; 
+            border-top: 1px solid #1a1a1a; 
+        }
+        
+        .social-links { margin-top: 20px; }
+        
+        .social-links a { 
+            color: var(--text-dim); 
+            margin: 0 15px; 
+            text-decoration: none; 
+            transition: 0.3s ease; 
+        }
+        
+        .social-links a:hover { color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p class="subtitle">Desenvolvedor Web</p>
+            <h1>Lucas <span class="accent">Cruz</span></h1>
+            <p style="color: var(--text-dim); margin-bottom: 30px; max-width: 600px;">
+                Transformando conceitos em realidade digital. Desenvolvedor focado em construir soluções escaláveis, seguras e com <b>design responsivo</b>.
+            </p>
+            <a href="#projetos" class="btn">Ver Projetos</a>
+        </div>
+    </header>
+
+    <section id="sobre" class="container">
+        <h2>Sobre Mim</h2>
+        <p>
+            Minha jornada com a tecnologia nasceu do desejo de criar. Após meu primeiro emprego em 2023, investi no meu primeiro computador para transformar curiosidade em linhas de código. Formado em 2024 e atualmente cursando <b>Análise e Desenvolvimento de Sistemas (ADS)</b>, busco constantemente evoluir minha stack técnica. Sou um desenvolvedor movido pelo desafio de transformar ideias em soluções reais, focado em ingressar no mercado para contribuir e crescer junto a grandes projetos.
+        </p>
+    </section>
+
+    <section id="techs" class="container">
+        <h2>Tecnologias</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>HTML5</h3>
+                <p>Estruturação semântica e boas práticas de SEO/Acessibilidade.</p>
+            </div>
+            <div class="card">
+                <h3>CSS3</h3>
+                <p>Layouts modernos com Flexbox, Grid e design responsivo.</p>
+            </div>
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Manipulação de DOM, lógica assíncrona e ES6+.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="container">
+        <h2>Projetos em Destaque</h2>
+        <div class="project-card">
+            <span class="project-tag">Criptografia & Lógica</span>
+            <h3 style="font-size: 2rem; margin: 15px 0;">CODECRIP</h3>
+            <p style="color: var(--text-dim); margin-top: 10px; margin-bottom: 25px;">
+                Aplicação especializada em segurança de dados simples, realizando criptografia via <b>Cifra de César</b> e geração de <b>Hashes</b>.
+            </p>
+            <a href="https://github.com/Lucaslcz/CODECRIP" target="_blank" class="btn" style="font-size: 0.9rem;">Ver Código Fonte</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Vamos construir o próximo projeto juntos?</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sonorkle?igsh=dnI3djlmczBydmht">Instagram</a>
+                <a href="https://www.linkedin.com/in/lucas-da-cruz-dias">LinkedIn</a>
+                <a href="https://github.com/Lucaslcz">GitHub</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #333; margin-top: 30px;">
+                &copy; 2026 Lucas Cruz. Desenvolvido com foco em performance e design.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
