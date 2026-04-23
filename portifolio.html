@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Lucas Cruz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portifolio.css">
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="back-link">← VOLTAR AO INÍCIO</a>
+        <button id="theme-toggle" class="theme-btn">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
+        </button>
+    </div>
+</nav>
+
+    <section id="sobre" class="container">
+        <h2>Sobre Mim</h2>
+        <p>
+            Minha jornada com a tecnologia nasceu do desejo de criar. Após meu primeiro emprego em 2023, investi no meu primeiro computador para transformar curiosidade em linhas de código. Formado em 2024 e atualmente cursando <b>Análise e Desenvolvimento de Sistemas (ADS)</b>, busco constantemente evoluir minha stack técnica. Sou um desenvolvedor movido pelo desafio de transformar ideias em soluções reais, focado em ingressar no mercado para contribuir e crescer junto a grandes projetos.
+        </p>
+    </section>
+
+    <section id="techs" class="container">
+        <h2>Tecnologias</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 style="color:rgb(250, 207, 126);">HTML5</h3>
+                <p>Estrutura semântica, marcação de conteúdo e hiperlinks para a construção da arquitetura básica de páginas web.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:rgb(184, 100, 253);">CSS3</h3>
+                <p>Estilização visual, layout responsivo (Flexbox/Grid) e seletores para definir a aparência e o design de elementos HTML.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:rgb(250, 250, 123);">JavaScript</h3>
+                <p>Manipulação de DOM, lógica assíncrona e ES6+ para interatividade e controle de fluxo no navegador.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:rgb(151, 191, 252);">MySQL</h3>
+                <p>Modelagem relacional, queries SQL e gerenciamento de dados via tabelas, chaves e índices.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:rgb(98, 240, 98);">Python</h3>
+                <p>Sintaxe limpa, multiparadigma e vasta biblioteca padrão para automação, ciência de dados e desenvolvimento back-end.</p>
+            </div>
+            <div class="card">
+                <h3 style="color:rgb(19, 167, 226);">C#.NET</h3>
+                <p>Tipagem forte, POO robusta e ecossistema .NET para desenvolvimento de aplicações corporativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="container">
+        <h2>Projetos em Destaque</h2>
+        
+        <div class="project-card" style="margin-bottom: 30px;">
+            <span class="project-tag">Criptografia & Lógica</span>
+            <h3 style="font-size: 2rem; margin: 15px 0;">CODECRIP</h3>
+            <p style="color: var(--text-dim); margin-top: 10px; margin-bottom: 25px;">
+                Aplicação especializada em segurança de dados simples, realizando criptografia via <b>Cifra de César</b> e geração de <b>Hashes</b>.
+            </p>
+            <a href="https://github.com/Lucaslcz/CODECRIP" target="_blank" class="btn" style="font-size: 0.9rem;">Ver Código Fonte</a>
+        </div>
+
+        <div class="project-card" style="margin-bottom: 30px;">
+            <span class="project-tag">API em Python</span>
+            <h3 style="font-size: 2rem; margin: 15px 0;">APi-LojaGamer</h3>
+            <p style="color: var(--text-dim); margin-top: 10px; margin-bottom: 25px;">
+                Um <b>Sistema de Gestão de Estoque</b> para uma Loja Gamer 24h, desenvolvido em Python.
+            </p>
+            <a href="https://github.com/Lucaslcz/API-LojaGamer" target="_blank" class="btn" style="font-size: 0.9rem;">Ver Código Fonte</a>
+        </div>
+
+        <div class="project-card" style="margin-bottom: 30px;">
+            <span class="project-tag">API em C#.NET</span>
+            <h3 style="font-size: 2rem; margin: 15px 0;">APi-Hamburgueria</h3>
+            <p style="color: var(--text-dim); margin-top: 10px; margin-bottom: 25px;">
+                Um <b>Sistema de simulação de pedidos</b> em uma Hamburgueria, desenvolvido em C#.NET.
+            </p>
+            <a href="https://github.com/Lucaslcz/API-Hamburgueria" target="_blank" class="btn" style="font-size: 0.9rem;">Ver Código Fonte</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Vamos construir o próximo projeto juntos?</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/lucas_c_d21" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/lucas-da-cruz-dias" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Lucaslcz" target="_blank">GitHub</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #444; margin-top: 30px;">
+                &copy; 2026 Lucas Cruz. Desenvolvido com foco em performance e design.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        const isLight = body.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+    }
+</script>
+</body>
+</html>

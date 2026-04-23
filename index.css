@@ -1,0 +1,127 @@
+:root {
+    --bg: #050505;
+    --primary: #00ff88;
+    --text: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: var(--bg);
+}
+
+.cursor-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background: radial-gradient(
+        circle 250px at var(--mouse-x) var(--mouse-y), 
+        rgba(0, 255, 136, 0.1), 
+        transparent 80%
+    );
+}
+
+header:hover .cursor-glow {
+    opacity: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-dim);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.white-glow, .accent {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.white-glow { color: var(--text); }
+.accent { color: var(--primary); }
+
+h1:has(.white-glow:hover) .white-glow,
+h1:has(.white-glow:hover) .accent {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+h1:has(.accent:hover) .white-glow,
+h1:has(.accent:hover) .accent {
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.8), 0 0 40px rgba(0, 255, 136, 0.3);
+}
+
+.description {
+    color: var(--text-dim);
+    margin: 0 auto 35px;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 15px 35px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+
+.btn:hover {
+    background: var(--primary);
+    color: var(--bg);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+    transform: translateY(-3px);
+}
