@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Projetos | Lucas Cruz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="projetos.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="portifolio.html" class="back-link">← VOLTAR AO PORTFÓLIO</a>
+            <button id="theme-toggle" class="theme-btn">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="section-header">
+            <h1>Todos os Projetos</h1>
+            <p>Uma coleção completa das minhas aplicações e estudos.</p>
+        </header>
+
+        <div class="projects-grid">
+            
+            <div class="project-card-flip">
+                <div class="project-card-inner">
+                    <div class="project-front">
+                        <span class="project-tag">Criptografia & Lógica</span>
+                        <h3>CODECRIP</h3>
+                        <a href="https://github.com/Lucaslcz/CODECRIP" target="_blank" class="btn-source">Ver Código Fonte</a>
+                    </div>
+                    <div class="project-back">
+                        <p>Aplicação especializada em segurança de dados simples, realizando criptografia via <b>Cifra de César</b> e geração de <b>Hashes</b>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card-flip">
+                <div class="project-card-inner">
+                    <div class="project-front">
+                        <span class="project-tag">API em Python</span>
+                        <h3>APi-LojaGamer</h3>
+                        <a href="https://github.com/Lucaslcz/API-LojaGamer" target="_blank" class="btn-source">Ver Código Fonte</a>
+                    </div>
+                    <div class="project-back">
+                        <p>Um <b>Sistema de Gestão de Estoque</b> para uma Loja Gamer 24h, desenvolvido em Python.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-flip">
+                <div class="project-card-inner">
+                    <div class="project-front">
+                        <span class="project-tag">API em C#.NET</span>
+                        <h3>APi-Hamburgueria</h3>
+                        <a href="https://github.com/Lucaslcz/API-Hamburgueria" target="_blank" class="btn-source">Ver Código Fonte</a>
+                    </div>
+                    <div class="project-back">
+                        <p>Um <b>Sistema de simulação de pedidos</b> em uma Hamburgueria, desenvolvido em C#.NET.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const projectCards = document.querySelectorAll('.project-card-inner');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') body.classList.add('light-mode');
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.classList.contains('btn-source')) return;
+                this.classList.toggle('flipped');
+            });
+        });
+    </script>
+
+</body>
+</html>
