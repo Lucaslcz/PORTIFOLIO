@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="projetos.css">
+    <link rel="stylesheet" href="portifolio.css">
 </head>
 <body>
 
@@ -97,28 +98,47 @@
                 </div>
             </div>
 
+            <div class="project-card-flip">
+                <div class="project-card-inner">
+                    <div class="project-front">
+                        <span class="project-tag">Animação</span>
+                        <h3>Heart Animation</h3>
+                        <a href="https://github.com/Lucaslcz/Heart-Animation" target="_blank" class="btn-source">Ver Código Fonte</a>
+                    </div>
+                    <div class="project-back">
+                        <p>Animação de um coração em python</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const projectCards = document.querySelectorAll('.project-card-inner');
+    <footer>
+        <div class="container">
+            <p class="footer-status">Vamos construir o próximo projeto juntos?</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/lucas_c_d1/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/lucas-da-cruz-dias" target="_blank">LinkedIn</a>
+                <a href="javascript:void(0)" id="email-link">Email</a>
+            </div>
+            <p class="copyright">
+                &copy; 2026 Lucas Cruz. Desenvolvido com foco em performance e design.
+            </p>
+        </div>
+    </footer>
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-        });
+    <div id="email-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Meu E-mail</h3>
+            <p id="email-text">lucascruzdias8@gmail.com</p>
+            <button onclick="copyEmail()" class="btn-copy">Copiar E-mail</button>
+        </div>
+    </div>
 
-        if (localStorage.getItem('theme') === 'light') body.classList.add('light-mode');
-
-        projectCards.forEach(card => {
-            card.addEventListener('click', function(e) {
-                if (e.target.classList.contains('btn-source')) return;
-                this.classList.toggle('flipped');
-            });
-        });
-    </script>
+    <script src="projetos.js" ></script>
+    <script src="portifolio.js"></script>
 
 </body>
 </html>
